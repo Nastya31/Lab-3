@@ -1,19 +1,31 @@
-#pragma once
+#ifndef LAB_H
+#define LAB_H
+#include <iostream>
+#include <string>
+#include <fstream>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+using namespace std;
 
-typedef struct gun {
-	char a[30];
-	int b;
-	int c;
-}gun;
+class gun{
+private:
+    string name;//название оружия
+    int kalibr;
+    int massa;
 
-void printAll(int a, gun* array);
-void push(int * a, gun* array);
-void del(int * a, gun* array);
-gun* poiskNazvanie(int a, gun* array);
-gun* poiskKalibr(int a, gun* array);
-gun* poiskMassa(int a, gun* array);
-void izmenenie(int *a, gun* array);
+public:
+    gun();//конструктор
+    gun(string N, int k, int m);
+    ~gun();//диструктор
+
+    void Print();
+    void SetParametrs(string S, int kalib, int mass);
+
+    string GetName() {return name;};
+    int GetKalib() {return kalibr;};
+    int GetMass() {return massa;};
+    void AddToFile(string NameF);//добавление в файл
+    void AddToFile1(string NameF);
+};
+
+
+#endif // LAB_H
