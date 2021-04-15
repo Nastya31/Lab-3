@@ -1,3 +1,2 @@
-all: main.c lab.c
-	gcc main.c lab.c -o test
-
+all: main.cpp lab.cpp func.cpp
+	g++ main.cpp lab.cpp func.cpp -o prog
